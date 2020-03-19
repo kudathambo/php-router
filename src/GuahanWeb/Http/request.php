@@ -15,11 +15,9 @@ class Request {
             // HEAD requests must immediately return with no body
             exit;
         }
-
-        $this->uri = $_SERVER['REQUEST_URI'];
-        $this->query = empty($_SERVER['QUERY_STRING']) ? array() : parse_str($_SERVER['QUERY_STRING']);
+        $this->uri = $this->_getUri($_SERVER['REQUEST_URI']);
+        parse_str($_SERVER['QUERY_STRING'], $this->query);
         $this->headers = $this->getAllHeaders();
-
         $this->params = array();
     }
 
@@ -58,6 +56,17 @@ class Request {
     // we only can write the params directly
     public function __set($k, $v) {
         $this->params[$k] = $v;
+    }
+
+    //Lets sanitize the uri
+    private function _getUri($uri){
+        if(false !== strpos($uri, "?")){
+            $uri = explode("?",$uri)[0];
+        }
+        $parts= explode("/", $uri);
+        $parts = array_filter($parts);
+        $uri = "/".implode("/",array_values($parts));
+        return $uri;
     }
 
     protected function getAllHeaders() {
