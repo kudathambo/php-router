@@ -1,6 +1,6 @@
 {
     "name": "kudathambo/php-router",
-    "description": "A lightweight router for PHP projects",
+    "description": "A lightweight router for PHP projects (FORKED)",
     "type": "library",
     "license": "MIT",
     "authors": [
