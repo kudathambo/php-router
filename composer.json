@@ -1,5 +1,5 @@
 {
-    "name": "guahanweb/php-router",
+    "name": "guahanweb/php-router-extended",
     "description": "A lightweight router for PHP projects",
     "type": "library",
     "license": "MIT",
@@ -9,6 +9,11 @@
             "email": "garth@guahanweb.com",
             "homepage": "http://www.guahanweb.com",
             "role": "Lead Developer"
+        },{
+            "name": "Kudakwashe Thambo",
+            "email": "kudathambo@gmail.com",
+            "homepage": "http://www.guahanweb.com",
+            "role": "Developer"
         }
     ],
     "minimum-stability": "dev",
